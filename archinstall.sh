@@ -8,10 +8,10 @@ disk_picker() {
     read -r disk_number
 }
 
-# Function to display partitions and types
+# Function to display partitions and types using fdisk
 display_partitions() {
     echo "Partitions on disk $selected_disk:"
-    lsblk "/dev/$selected_disk"
+    sudo fdisk -l "/dev/$selected_disk"
 }
 
 # Main function
